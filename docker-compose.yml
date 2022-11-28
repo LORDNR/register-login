@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=login
+      - POSTGRES_PASSWORD=loginregister
+      - POSTGRES_DB=postgres
+
+    ports:
+      - "5432:5432"
