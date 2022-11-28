@@ -24,6 +24,7 @@ func main() {
 	routes.AuthRouter(r)
 	routes.UserRouter(r)
 	routes.UploadRouter(r)
+	routes.PostRouter(r)
 
 	r.Run()
 }
