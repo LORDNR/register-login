@@ -15,11 +15,15 @@ func init() {
 
 func main() {
 	r := gin.Default()
+	r.MaxMultipartMemory = 8 << 20 // 8 MiB
+	// r.Static("/", "/public/")
+
 	r.Use(cors.Default())
 	r.Use(gin.Logger())
 
 	routes.AuthRouter(r)
 	routes.UserRouter(r)
+	routes.UploadRouter(r)
 
 	r.Run()
 }
