@@ -1,4 +1,4 @@
-package auth
+package controllers
 
 import (
 	"fmt"
@@ -28,6 +28,7 @@ func Register(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to hash password",
 		})
+
 		return
 	}
 

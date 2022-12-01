@@ -2,9 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	UploadController "github.com/lordnr/login-register/controllers/upload"
+	"github.com/lordnr/login-register/controllers"
 )
 
-func UploadRouter(incomingRoutes *gin.Engine) {
-	incomingRoutes.POST("/upload", UploadController.Upload)
+func UploadRouter(uploadRouter *gin.Engine) {
+	uploadRouter.POST("/upload", controllers.Upload)
 }

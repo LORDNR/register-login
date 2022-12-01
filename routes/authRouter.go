@@ -2,10 +2,10 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	AuthController "github.com/lordnr/login-register/controllers/auth"
+	"github.com/lordnr/login-register/controllers"
 )
 
-func AuthRouter(incomingRoutes *gin.Engine) {
-	incomingRoutes.POST("/register", AuthController.Register)
-	incomingRoutes.POST("/login", AuthController.Login)
+func AuthRouter(authRouter *gin.Engine) {
+	authRouter.POST("/register", controllers.Register)
+	authRouter.POST("/login", controllers.Login)
 }

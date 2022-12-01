@@ -2,12 +2,13 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	PostController "github.com/lordnr/login-register/controllers/post"
+	"github.com/lordnr/login-register/controllers"
 )
 
-func PostRouter(incomingRoutes *gin.Engine) {
-	incomingRoutes.POST("/posts", PostController.NewPost)
-	incomingRoutes.GET("/posts", PostController.Posts)
-	incomingRoutes.GET("/posts/:id", PostController.PostById)
-	incomingRoutes.PATCH("/posts/:id", PostController.PostUpdate)
+func PostRouter(postRouter *gin.Engine) {
+	postRouter.POST("/posts", controllers.NewPost)
+	postRouter.GET("/posts", controllers.Posts)
+	postRouter.GET("/posts/:id", controllers.PostById)
+	postRouter.PATCH("/posts/:id", controllers.PostUpdate)
+	postRouter.DELETE("/posts/:id", controllers.PostDelete)
 }
